@@ -14,7 +14,7 @@ double integrate1(Range rng)
 	double sum = 0.0;
 	double stepSize = (rng.upperlimit - rng.lowerlimit) / rng.intervals;
 
-	for (i = 0; i < rng.upperlimit; i++) {
+	for (i = 0; i < rng.intervals; i++) {
 		double x = rng.lowerlimit + i * stepSize;
 		sum += func(x);
 	}
