@@ -10,11 +10,12 @@ double integrate1(Range rng)
 	// calculate the numerical integration of the function func
 	// based on the three attributes (`lowerlimit`, `upperlimit`, and `intervals`) of the type `Range`.
 	// the return value of function `integrate1` should be the numerical integration (return type is double) 
-	int i;
-	double sum = 0.0;
+	int i;				// index of loop below
+	double sum = 0.0;	// takes sum of all the intervals based on estimate provided in README.md
 	double stepSize = (rng.upperlimit - rng.lowerlimit) / rng.intervals;
 
 	for (i = 0; i < rng.intervals; i++) {
+		// to be used in the function to calulate the function value 
 		double x = rng.lowerlimit + i * stepSize;
 		sum += func(x);
 	}
