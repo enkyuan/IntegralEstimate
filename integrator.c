@@ -11,16 +11,15 @@ double integrate1(Range rng)
 	// based on the three attributes (`lowerlimit`, `upperlimit`, and `intervals`) of the type `Range`.
 	// the return value of function `integrate1` should be the numerical integration (return type is double) 
 	int i;
-	int n = rng.intervals;
 	double sum = 0.0;
-	double stepSize = (rng.upperlimit - rng.lowerlimit) / n;
+	double stepSize = (rng.upperlimit - rng.lowerlimit) / rng.intervals;
 
 	for (i = 0; i < rng.upperlimit; i++) {
 		double x = rng.lowerlimit + i * stepSize;
 		sum += func(x);
 	}
 	
-	return sum;
+	return stepSize * sum;
 }
 
 void integrate2(RangeAnswer * rngans)
