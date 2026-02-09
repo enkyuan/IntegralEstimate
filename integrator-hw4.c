@@ -106,7 +106,7 @@ bool  runIntegrate(char * infilename, char * outfilename)
 
         // open the output file for writing
         // if fopen fails, return false
-        ftpr = fopen(outfilename, "w");
+        fptr = fopen(outfilename, "w");
         if (fptr == NULL) {
                 return false;
         }
